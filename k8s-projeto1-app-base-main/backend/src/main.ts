@@ -1,5 +1,6 @@
 import express from "express"
 import { configDotenv } from "dotenv"
+import { filmes } from "./dados/filmes.ts"
 
 configDotenv()
 
@@ -15,5 +16,5 @@ app.listen(porta, () => {
 })
 
 app.get("/filmes", (req, res) => {
-  res.json()
+  res.json(filmes)
 })
