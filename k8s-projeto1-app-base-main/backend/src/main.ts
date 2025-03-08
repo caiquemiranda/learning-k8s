@@ -24,3 +24,9 @@ app.post("/filmes", (req, res) => {
   filmes.push(novoFilme)
   res.status(201).json(novoFilme)
 })
+
+app.get("/filmes/:id", (req, res) => {
+  const filme = filmes.find((filme) => filme.id === req.params.id)
+  res.status(200).json(filme)
+})
+
