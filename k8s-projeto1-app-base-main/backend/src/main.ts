@@ -16,5 +16,11 @@ app.listen(porta, () => {
 })
 
 app.get("/filmes", (req, res) => {
-  res.json(filmes)
+  res.status(200).json(filmes)
+})
+
+app.post("/filmes", (req, res) => {
+  const novoFilme = req.body
+  filmes.push(novoFilme)
+  res.status(201).json(novoFilme)
 })
